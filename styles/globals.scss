@@ -1,0 +1,28 @@
+$progress: #fff;
+
+pre {
+  overflow-y: scroll;
+  border: none !important;
+  background-color: #222 !important;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #191919 !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #nprogress {
+    .bar {
+      background: $progress !important;
+    }
+  
+    .peg {
+      box-shadow: 0 0 10px $progress, 0 0 5px $progress !important;
+    }
+  
+    .spinner-icon {
+      border-top-color: $progress !important;
+      border-left-color: $progress !important;
+    }
+  }
+}

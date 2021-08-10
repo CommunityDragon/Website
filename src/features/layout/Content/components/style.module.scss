@@ -1,0 +1,166 @@
+.content {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    text-transform: none;
+    font-weight: normal;
+    color: #333;
+  }
+
+  h4, h5, h6 {
+    margin-bottom: .25rem;
+  }
+
+  a {
+    color: #1e87f0;
+    font-weight: 400;
+
+    &:hover {
+      color: #0f6ecd;
+    }
+  }
+
+  h1 {
+    position: relative;
+    font-size: 2.6rem;
+    line-height: 1.2;
+
+    @media (min-width: 960px) {
+      font-size: 3.25rem;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 4rem;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: relative;
+      top: calc(-0.1 * 1em);
+      vertical-align: middle;
+      height: calc(4px + 0.7em);
+      margin-right: calc(5px + 0.2em);
+      border-left: calc(5px + 0.1em) solid #e5e5e5;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: .5rem 0;
+    width: 100%;
+
+    > tr:not(:first-child),
+    > :not(:first-child) > tr,
+    > :first-child > tr:not(:first-child) {
+      border-top: 1px solid #e5e5e5;
+    }
+
+    th, td {
+      padding: 10px 12px;
+    }
+
+    th {
+      text-transform: uppercase;
+      vertical-align: bottom;
+      font-weight: normal;
+      font-size: 0.875rem;
+      text-align: left;
+      color: #999;
+    }
+
+    td {
+      vertical-align: top;
+      text-align: left;
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    tfoot {
+      font-size: 0.875rem;
+    }
+
+    caption {
+      font-size: 0.875rem;
+      text-align: left;
+      color: #999;
+    } 
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 0 0 .75rem 0;
+    font-weight: 300;
+  }
+
+  b, strong, b a, strong a {
+    font-weight: 700;
+  }
+
+  ul, ol {
+    font-size: 1.05rem;
+    list-style: none;
+    margin: .5rem 0;
+    padding: 0;
+
+    > * {
+      padding-left: 30px;
+    }
+
+    > ::before {
+      content: '';
+      position: relative;
+      left: -30px;
+      width: 30px;
+      height: 1.5em;
+      margin-bottom: -1.5em;
+      display: list-item;
+      list-style-position: inside;
+      text-align: right;
+      list-style-type: circle;
+    }
+
+    * > :last-child {
+      margin-bottom: 0;
+    }
+
+    > :nth-child(n+2),
+    > * > ul {
+      margin-top: 0;
+    }
+  }
+}
+
+:global(.uk-light) {
+  .content {
+    h1, h2, h3, h4, h5, h6 {
+      text-transform: none;
+      font-weight: normal;
+      color: #fff;
+    }
+
+    h1 {
+      &::before {
+        border-left-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    table {
+      th {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      caption {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      > tr:not(:first-child),
+      > :not(:first-child) > tr,
+      > :first-child > tr:not(:first-child) {
+        border-top-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}

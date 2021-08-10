@@ -1,0 +1,12 @@
+.hero {
+  @media screen and (max-width: 639px) {
+    :global(.uk-grid) {
+      flex-direction: column-reverse;
+    }
+
+    img {
+      padding-bottom: 2rem;
+    }
+  }
+
+}

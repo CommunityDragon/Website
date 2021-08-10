@@ -1,0 +1,20 @@
+@media screen and (max-width: 639px) {
+  .highlight_button .highlight_button_text {
+      display: inline-block;
+      overflow: hidden;
+      width: 0;
+      height: 0;
+  }
+
+  .highlight_button img {
+      margin-right: -3px !important;
+  }
+}
+
+.patreon {
+  background-color: #DA353E !important;
+
+  &:hover {
+    background-color: #FF424D !important;
+  }
+}

@@ -1,0 +1,124 @@
+@mixin chart-hover {
+  :global(.apexcharts-tooltip) {
+    background-color: $lightBlack !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    color: #fff !important;
+    border: none !important;
+    border-radius: 0;
+    padding: .2rem;
+
+    * {
+      font-size: .8rem !important;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif !important;
+    }
+
+    :global(.apexcharts-tooltip-title), :global(.apexcharts-tooltip-marker), :global(.apexcharts-tooltip-text-y-label) {
+      display: none !important;
+    }
+  }
+}
+
+@mixin chart-title {
+  :global(.apexcharts-title-text) {
+    fill: #666 !important;
+
+    @media (prefers-color-scheme: dark) {
+      fill: rgba(255,255,255,.5)!important;
+    }
+  }
+
+  :global(.apexcharts-subtitle-text) {
+    fill: #000 !important;
+
+    @media (prefers-color-scheme: dark) {
+      fill: #fff !important;
+    }
+  }
+}
+
+.dummy_block {
+  background-color: $darkBlack;
+  text-align: center;
+  height: 36rem;
+  width: 100%;
+}
+
+.area_chart {
+  @include chart-hover;
+  @include chart-title;
+  margin-top: -1rem;
+
+  @media screen and (max-width: 639px) {
+    margin: -1.75rem -.5rem -1rem -1rem;
+  }
+}
+
+
+.storage_chart {
+  // @include chart-hover;
+  @include chart-title;
+  margin: -1rem -2rem;
+
+  :global(.apexcharts-tooltip .apexcharts-tooltip-text-y-value:after) {
+    content: "GB";
+  }
+
+  @media screen and (max-width: 639px) {
+    position: absolute;
+    margin: auto;
+    margin-top: -1.75rem;
+    width: 16rem;
+    right: 0;
+    left: 0;
+  }
+}
+
+.request_chart {
+  :global(.apexcharts-tooltip .apexcharts-tooltip-text-y-value:after) {
+    content: "M requests";
+  }
+}
+
+.served_chart {
+  :global(.apexcharts-tooltip .apexcharts-tooltip-text-y-value:after) {
+    content: "GB";
+  }
+}
+
+.uptime_chart {
+  @include chart-hover;
+
+  :global(.apexcharts-tooltip .apexcharts-tooltip-text-y-value:after) {
+      content: "% uptime";
+  }
+
+  :global(.apexcharts-bar-series.apexcharts-plot-series .apexcharts-series) {
+    path {
+      clip-path: inset(0 0 0 0 round 2px) !important;
+    }
+  }
+}
+
+.storage_tile {
+  padding: 1.75rem 0;
+  height: calc(100% - 1.25rem);
+
+  @media screen and (max-width: 639px) {
+    height: 15rem;
+  }
+}
+
+.tile {
+  @media screen and (max-width: 639px) {
+    :global(.monitor-name) {
+      text-align: center;
+      margin-left: 0 !important;
+      margin-bottom: .5rem !important;
+      font-size: 1.25rem !important;
+    }
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: $darkBlack !important;
+  }
+}

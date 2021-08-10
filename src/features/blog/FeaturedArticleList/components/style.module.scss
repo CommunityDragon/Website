@@ -1,0 +1,19 @@
+.featured_article_list {
+  padding-bottom: 1rem !important;
+}
+
+@media screen and (max-width: 639px) {
+  .featured_article_list {
+    > :global(.uk-grid *:nth-child(n + 3)) {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .featured_article_list {
+    > :global(.uk-grid *:nth-child(4)) {
+      display: none;
+    }
+  }
+}
