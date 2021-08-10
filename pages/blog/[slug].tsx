@@ -39,7 +39,7 @@ const ArticlePage: React.FC<IProps> = ({ post }) => {
 const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const post = await fetchPostBySlug(params!.slug!)
-    return { props: { post }}
+    return { props: { post }, revalidate: 60 * 60 }
   } catch {
     return { notFound: true }
   }

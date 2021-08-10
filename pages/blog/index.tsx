@@ -1,8 +1,7 @@
-import { GetStaticProps } from "next";
-import { ghost } from "@utilities/ghost";
-import { PostOrPage } from "@tryghost/content-api";
 import ArticleInfiniteList from "@features/blog/ArticleInfiniteList";
 import fetchPostsByPage from "@fetch/posts-by-page";
+import { PostOrPage } from "@tryghost/content-api";
+import { GetStaticProps } from "next";
 
 interface IProps {
   initialPosts: PostOrPage[]
@@ -26,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
   ])
   
   return {
-    props: { initialPosts: posts }
+    props: { initialPosts: posts, revalidate: 60 * 5 }
   }
 }
 
