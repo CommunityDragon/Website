@@ -8,9 +8,9 @@ import Patreon from "@public/icons/patreon.png"
 import { useEffect } from "react"
 import { useState } from "react"
 import { PostOrPage } from "@tryghost/content-api"
-import fetchFeaturedPosts from "@fetch/featured-posts"
 import { useFeaturedPosts } from '@hooks/featured-posts'
 import FeaturedArticleList from '@features/blog/FeaturedArticleList'
+import axios from "axios"
 
 const Container = () => {
   const [initialized, setInitialized] = useState(false)
@@ -21,12 +21,12 @@ const Container = () => {
    * set theme
    */
    useEffect(() => {
-     if (!initialized) {
-       setInitialized(true)
-        fetchFeaturedPosts()
-          .then(x => setPosts([...x]))
-          .catch(() => null)
-     }
+    if (!initialized) {
+      setInitialized(true)
+      axios.get<PostOrPage[]>('/api/blog/posts/featured')
+        .then(({ data: x }) => setPosts([...x]))
+        .catch(() => null)
+    }
   }, [featured]);
 
   return (
