@@ -17,6 +17,7 @@
     "apexcharts": "^3.27.3",
     "axios": "^0.21.1",
     "highlight.js": "^11.2.0",
+    "html-react-parser": "^1.2.8",
     "memoizee": "^0.4.15",
     "next": "11.0.1",
     "nprogress": "^0.2.0",
@@ -29,6 +30,7 @@
     "react-lazyload": "^3.2.0",
     "react-scale-text": "^1.2.2",
     "sass": "^1.36.0",
+    "sync-request": "^6.1.0",
     "uikit": "^3.7.1",
     "yarn": "^1.22.10"
   },
