@@ -16,6 +16,7 @@
     "@tryghost/string": "^0.1.19",
     "apexcharts": "^3.27.3",
     "axios": "^0.21.1",
+    "discord-webhook-node": "^1.1.8",
     "highlight.js": "^11.2.0",
     "html-react-parser": "^1.2.8",
     "memoizee": "^0.4.15",
