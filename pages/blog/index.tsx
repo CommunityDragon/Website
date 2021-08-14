@@ -25,7 +25,8 @@ export const getStaticProps: GetStaticProps = async () => {
   ])
   
   return {
-    props: { initialPosts: posts, revalidate: 60 * 5 }
+    revalidate: 60 * 5,
+    props: { initialPosts: posts }
   }
 }
 
