@@ -28,9 +28,7 @@ const Anchor: React.FC<AnchorProps> = props => {
   }
 
   return (
-    <Link {...linkProps}>
-      <a {...anchorProps} />
-    </Link>
+    <Link {...linkProps} {...anchorProps} />
   )
 }
 
