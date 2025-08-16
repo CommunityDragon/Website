@@ -13,12 +13,12 @@ export const ghost = (() => {
     content: new GhostContentAPI({
       url: process.env.GHOST_URL as string,
       key: process.env.GHOST_CONTENT_KEY as string,
-      version: 'v3',
+      version: 'v3.0',
     }),
     admin: process.browser ? undefined : new GhostAdminAPI({
       url: process.env.GHOST_URL as string,
       key: process.env.GHOST_ADMIN_KEY as string,
-      version: 'v3',
+      version: 'v3.0',
     })
   }
 })()
