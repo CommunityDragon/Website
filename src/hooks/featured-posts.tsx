@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { createContext, Dispatch, useReducer } from 'react';
+import { createContext, Dispatch, useCallback, useReducer } from 'react';
 
 interface IState {
   active: boolean
@@ -40,19 +40,25 @@ export const FeaturedPostsProvider: React.FC<any> = ({ children }) => {
  */
 export const useFeaturedPosts = (): [boolean, (active: boolean) => void] => {
   const { state, dispatch } = useContext(FeaturedPostsContext)
-  return [state.active, (active: boolean) => (
-    dispatch({ type: active ? 'FEATURED_POSTS_ON' : 'FEATURED_POSTS_OFF' })
-  )]
+
+  const setActive = useCallback(
+    (active: boolean) => {
+      dispatch({ type: active ? "FEATURED_POSTS_ON" : "FEATURED_POSTS_OFF" })
+    },
+    [dispatch]
+  )
+
+  return [state.active, setActive]
 }
 
 /**
  * enable featured posts hook
  */
 export const useEnableFeaturesPosts = () => {
-  const [_, setFeatured] = useFeaturedPosts()
+  const [, setFeatured] = useFeaturedPosts()
 
   useEffect(() => {
-    setFeatured(true)
-    return () => setFeatured(false)
-  }, [setFeatured])
+    setFeatured(true)            // enable once on mount
+    return () => setFeatured(false)  // disable on unmount
+  }, [setFeatured])              // depends only on stable setter
 }
