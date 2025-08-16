@@ -11,8 +11,11 @@ const NotFoundPage: React.FC = () => (
       <h1>Oops... Seems like something broke.</h1>
       <span style={{ fontSize: '1.5rem' }} className="uk-text-light">
         Please inform us about it on <strong>
-          <Link href="https://discord.gg/rZQwuek">
-            <a target="_blank" rel="noreferrer noopener">Discord</a>
+          <Link
+            href="https://discord.gg/rZQwuek"
+            target="_blank"
+            rel="noreferrer noopener">
+            Discord
           </Link>
         </strong>.
       </span>
