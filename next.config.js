@@ -4,7 +4,7 @@ module.exports = {
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
-    prependData: `@import "variables.scss";`
+    prependData: `@use "variables" as *;`
   },
   env: {
     UPTIME_KEY: process.env.UPTIME_KEY,
