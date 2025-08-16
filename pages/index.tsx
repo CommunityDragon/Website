@@ -1,6 +1,6 @@
 import { CloudFlareAnalytics } from "@typings/cloudflare-analytics"
 import fetchCloudFlareAnalytics from "@fetch/cloudflare-analytics"
-import { enableFeaturedPosts } from "@hooks/featured-posts"
+import { useEnableFeaturesPosts } from "@hooks/featured-posts"
 import fetchUptimeMonitors from "@fetch/uptime-monitors"
 import { UptimeMonitor } from "@typings/uptime-monitor"
 import fetchStorageUsage from "@fetch/storage-usage"
@@ -18,7 +18,7 @@ interface IProps {
  * Homepage
  */
 const Home: React.FC<IProps> = ({ initialMonitors, analytics, storageUsed }) => {
-  enableFeaturedPosts()
+  useEnableFeaturesPosts()
 
   return (
     <>

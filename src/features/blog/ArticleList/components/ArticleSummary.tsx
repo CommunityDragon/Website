@@ -17,7 +17,7 @@ const ArticleSummary: React.FC<IProps> = ({ post }) => (
     <a className={`uk-text-decoration-none ${styles.article_summary}`}>
       <LazyLoad height={200}>
         {post.feature_image ? (
-            <img src={post.feature_image} className='uk-margin-small-bottom'/>
+            <img src={post.feature_image} className='uk-margin-small-bottom' alt={post.title}/>
         ) : (
           <div className={`${styles.no_image} uk-margin-small-bottom`}>
             <span>{post.title}</span>

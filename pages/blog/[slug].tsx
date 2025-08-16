@@ -1,4 +1,4 @@
-import { enableFeaturedPosts } from "@hooks/featured-posts";
+import { useEnableFeaturesPosts } from "@hooks/featured-posts";
 import { GetStaticPaths, GetStaticProps } from "next";
 import UkContainer from "@components/uikit/Container";
 import PageTitle from "@components/common/PageTitle";
@@ -15,7 +15,7 @@ interface IProps {
  * article listing page
  */
 const ArticlePage: React.FC<IProps> = ({ post }) => {
-  enableFeaturedPosts()
+  useEnableFeaturesPosts()
 
   return (
     <div style={{ padding: '0 1rem' }}>
@@ -51,7 +51,7 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
 const getStaticPaths: GetStaticPaths = async () => {
   const data = await ghost.content.posts.browse({ fields: 'slug' })
   const paths = data.map(x => ({ params: { slug: x.slug }}))
-    
+
   return {
     fallback: 'blocking',
     paths,

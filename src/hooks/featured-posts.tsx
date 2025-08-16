@@ -48,11 +48,11 @@ export const useFeaturedPosts = (): [boolean, (active: boolean) => void] => {
 /**
  * enable featured posts hook
  */
-export const enableFeaturedPosts = () => {
+export const useEnableFeaturesPosts = () => {
   const [_, setFeatured] = useFeaturedPosts()
 
   useEffect(() => {
     setFeatured(true)
     return () => setFeatured(false)
-  }, [])
+  }, [setFeatured])
 }

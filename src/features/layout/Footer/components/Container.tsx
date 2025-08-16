@@ -27,7 +27,7 @@ const Container = () => {
         .then(({ data: x }) => setPosts([...x]))
         .catch(() => null)
     }
-  }, [featured]);
+  }, [featured, initialized]);
 
   return (
     <footer className={`${styles.footer} uk-light`}>
@@ -158,7 +158,7 @@ const Container = () => {
           <div className="uk-margin-top uk-text-center">
             <hr className="uk-margin-small-bottom uk-visible@s" />
             <span className="uk-text-meta">
-              CommunityDragon was created under Riot Games'
+              CommunityDragon was created under Riot Games&apos;
               <Anchor target="_blank" rel="noreferrer noopener" href="https://www.riotgames.com/en/legal">
                 {' "Legal Jibber Jabber" '}
               </Anchor>

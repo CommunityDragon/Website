@@ -20,12 +20,11 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   /**
    * set theme
    */
+  UIkit.use(Icons)
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: light)').matches) {
       document.documentElement.classList.remove('uk-background-secondary', 'uk-light');
     }
-    // @ts-ignore
-    UIkit.use(Icons)
   }, []);
 
   return (

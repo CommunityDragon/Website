@@ -1,4 +1,4 @@
-import { enableFeaturedPosts } from "@hooks/featured-posts";
+import { useEnableFeaturesPosts } from "@hooks/featured-posts";
 import UkContainer from "@components/uikit/Container";
 import PageTitle from "@components/common/PageTitle";
 import fetchPreviewByID from "@fetch/preview-by-id";
@@ -14,7 +14,7 @@ interface IProps {
  * article preview page
  */
 const PreviewArticlePage: React.FC<IProps> = ({ post }) => {
-  enableFeaturedPosts()
+  useEnableFeaturesPosts()
 
   return (
     <div style={{ padding: '0 1rem' }}>

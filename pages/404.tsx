@@ -1,4 +1,4 @@
-import { enableFeaturedPosts } from "@hooks/featured-posts"
+import { useEnableFeaturesPosts } from "@hooks/featured-posts"
 import UkContainer from "@components/uikit/Container"
 import Link from "next/link"
 
@@ -6,8 +6,8 @@ import Link from "next/link"
  * not found page
  */
 const NotFoundPage: React.FC = () => {
-  enableFeaturedPosts()
-  
+  useEnableFeaturesPosts()
+
   return (
     <UkContainer size='small' className="uk-margin uk-margin-large-bottom">
       <div className='uk-text-center'>
