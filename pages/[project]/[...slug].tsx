@@ -25,7 +25,7 @@ const GithubSlugPage: React.FC<IProps> = ({ page }) => {
               <>
                 <Anchor className='uk-text-meta' href={`/${page.project}/${item[0].path}`}>
                   {item[0].title}
-                </Anchor>        
+                </Anchor>
                 {formatSidebar(item.slice(1))}
               </>
             )
@@ -75,9 +75,9 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
     const slug = Array.isArray(params!.slug!) ? params!.slug!.join('/') : params!.slug!
     const project = params!.project! as string
     const page = await fetchGitHubPage(project, slug)
-  
+
     return {
-      props: { page }
+      props: { page }, revalidate: 60 * 60 * 24
     }
   } catch {
     return { notFound: true }

@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
   ])
 
   return {
-    props: { initialMonitors, analytics, storageUsed }
+    props: { initialMonitors, analytics, storageUsed }, revalidate: 60 * 5
   }
 }
 

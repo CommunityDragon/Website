@@ -23,9 +23,9 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const project = params!.project! as string
     const page = await fetchGitHubPage(project, '')
-  
+
     return {
-      props: { page }
+      props: { page }, revalidate: 60 * 60 * 24
     }
   } catch {
     return { notFound: true }
