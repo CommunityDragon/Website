@@ -44,9 +44,9 @@
 }
 
 .area_chart {
+  margin-top: -1rem;
   @include chart-hover;
   @include chart-title;
-  margin-top: -1rem;
 
   @media screen and (max-width: 639px) {
     margin: -1.75rem -.5rem -1rem -1rem;
@@ -55,9 +55,9 @@
 
 
 .storage_chart {
+  margin: -1rem -2rem;
   // @include chart-hover;
   @include chart-title;
-  margin: -1rem -2rem;
 
   :global(.apexcharts-tooltip .apexcharts-tooltip-text-y-value:after) {
     content: "GB";
@@ -117,7 +117,7 @@
       font-size: 1.25rem !important;
     }
   }
-  
+
   @media (prefers-color-scheme: dark) {
     background-color: $darkBlack !important;
   }
